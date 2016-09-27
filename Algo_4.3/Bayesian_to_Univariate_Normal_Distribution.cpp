@@ -15,7 +15,7 @@ vector<double> Bayesian_to_Univariate_Normal_Distribution::getTrainData(int num)
     normal_distribution<double> distribution(original_mu, original_var);
     for (int i = 0; i < num; ++i) {
         double number = distribution(generator);
-        cout<<number;
+        //cout<<number;
         temp.push_back(number);
     }
     return temp;
@@ -40,8 +40,9 @@ vector<double> Bayesian_to_Univariate_Normal_Distribution::BayesianApproach(vect
     double delta_post = (gamma*delta + size)/(gamma+size);
 
     //Computer itermediate parameters;
+    temp.clear();
     double alpha_int = alpha_post + 0.5;
-    for (vector<double>::const_iterator iter = test.begin(); iter != input.end(); iter++) {
+    for (vector<double>::const_iterator iter = test.begin(); iter != test.end(); iter++) {
         temp.push_back(pow(*iter, 2)/2 + beta_post + (gamma_post*delta_post*delta_post)/2
                        - pow((gamma_post*delta_post + *iter), 2) / (2* gamma_post + 2));
     }

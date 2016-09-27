@@ -7,8 +7,8 @@
 int main(){
     //testMaxLikelihoodLearning();
     //testMapLearning();
-    //testBayesianApproach();
-    testMLofCat();
+    testBayesianApproach();
+    //testMLofCat();
     cout<<"Hello World!"<<endl;
     return 0;
 }
