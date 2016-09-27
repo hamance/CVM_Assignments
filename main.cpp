@@ -2,21 +2,13 @@
 // Created by Mardo on 2016/9/26.
 //
 
-#include <iostream>
-#include "Algo_4.1/Max_Likelihood_Learning_of_Normal_Distribution.h"
-#include "Algo_4.2/MAP_of_Univariate_Normal_Parameters.h"
-#include "Algo_4.3/Bayesian_to_Univariate_Normal_Distribution.h"
-
-using namespace std;
-
-void testMaxLikelihoodLearning();
-void testMapLearning();
-void testBayesianApproach();
+#include "main.h"
 
 int main(){
     //testMaxLikelihoodLearning();
     //testMapLearning();
-    testBayesianApproach();
+    //testBayesianApproach();
+    testMLofCat();
     cout<<"Hello World!"<<endl;
     return 0;
 }
@@ -53,4 +45,14 @@ void testBayesianApproach() {
         test.push_back(i);
     }
     prediction = bud.BayesianApproach(input, 1,1,1,0, test);
+}
+
+void testMLofCat() {
+    ML_of_Categorical_Parameters mlcp;
+    double array[6] = {0.25,0.15,0.1,0.1,0.15,0.25};
+    size_t count = sizeof(array) / sizeof(double);
+    vector<double> weights(array, array+count);
+    vector<double> try1 = mlcp.randomSample(6, 20000, weights);
+    vector<double> out1 = mlcp.mleOfCat(try1, 6);
+    mlcp.estimateError(weights, out1);
 }
