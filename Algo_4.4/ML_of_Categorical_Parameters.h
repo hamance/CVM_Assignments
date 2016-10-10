@@ -13,9 +13,7 @@ class ML_of_Categorical_Parameters {
 
 public:
 
-    int findBin(double target, int start, int end, vector<double> line);
-
-    vector<double> randomSample(double max, int num, vector<double> weight);
+    vector<double> randomSample(int max, int num, vector<double> weight);
 
     vector<double> mleOfCat(vector<double> input, int cat);
 

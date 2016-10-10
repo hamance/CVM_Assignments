@@ -13,10 +13,6 @@
 #include "Algo_4.2/MAP_of_Univariate_Normal_Parameters.h"
 #include "Algo_4.3/Bayesian_to_Univariate_Normal_Distribution.h"
 #include "Algo_4.4/ML_of_Categorical_Parameters.h"
+#include "Algo_4.5/MAP_of_Categorical_Parameters.h"
 
 using namespace std;
-
-void testMaxLikelihoodLearning();
-void testMapLearning();
-void testBayesianApproach();
-void testMLofCat();
