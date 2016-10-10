@@ -21,7 +21,7 @@ public:
 
     Bayesian_to_Univariate_Normal_Distribution():mu(0), var(0) {};
 
-    vector<double> getTrainData(int num=5);
+    vector<double> getTrainData(int num=50);
 
     vector<double> BayesianApproach(vector<double>, double alpha, double beta, double gamma, double delta, vector<double>test);
 

@@ -37,7 +37,7 @@ vector<double> Bayesian_to_Univariate_Normal_Distribution::BayesianApproach(vect
     double beta_post = accumulate(temp.begin(), temp.end(), 0.0f) + beta + (gamma*delta*delta)/2
                        - pow((gamma*delta+accumulate(input.begin(), input.end(), 0.0f)),2)/(2*(gamma+size));
     double gamma_post = gamma + size;
-    double delta_post = (gamma*delta + size)/(gamma+size);
+    double delta_post = (gamma*delta + accumulate(input.begin(), input.end(), 0.0f))/(gamma+size);
 
     //Computer itermediate parameters;
     temp.clear();
