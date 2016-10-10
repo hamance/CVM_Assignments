@@ -45,3 +45,18 @@ void MAP_of_Univariate_Normal_Parameters::estimateError() {
     cout<<"mu: "<<fabs(original_mu - mu)<<endl;
     cout<<"var: "<<fabs(original_var - var)<<endl;
 }
+
+void testMapLearning() {
+    MAP_of_Univariate_Normal_Parameters mup;
+    vector<double> input;
+
+    int Num = 100;
+    cout<<"Maximum likelihood leanring of normal distribution..."<<endl;
+    cout<<"Please input the scale of training data.(integer): ";
+    cin>>Num;
+
+    input = mup.getTrainData(Num);
+
+    mup.mapLearning(input, 1,1,1,0);
+    mup.estimateError();
+}

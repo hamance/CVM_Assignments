@@ -73,3 +73,23 @@ double Max_Likelihood_Learning_of_Normal_Distribution::getMu() {
 double Max_Likelihood_Learning_of_Normal_Distribution::getVar() {
     return var;
 }
+
+void testMaxLikelihoodLearningOfNormal() {
+    Max_Likelihood_Learning_of_Normal_Distribution mle;
+    vector<double> input;
+
+    int Num = 100;
+    cout<<"Maximum likelihood leanring of normal distribution..."<<endl;
+    cout<<"Please input the scale of training data.(integer): ";
+    cin>>Num;
+
+    input = mle.getTrainData(Num);
+
+    //for (vector<double>::const_iterator iter=input.begin(); iter != input.end(); iter++) {
+    //    cout<<*iter<<", ";
+    //}
+    //cout<<endl;
+
+    mle.maxLikelihoodLearning(input);
+    mle.estimateError();
+}

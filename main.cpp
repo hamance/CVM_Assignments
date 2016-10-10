@@ -39,12 +39,13 @@ void testMapLearning() {
 void testBayesianApproach() {
     Bayesian_to_Univariate_Normal_Distribution bud;
     vector<double> input, test, prediction;
-    input = bud.getTrainData();
+    input = bud.getTrainData(5000);
     //x_test = -20:0.01:30;
     for(double i=-20.0; i<30 ;i+= 0.01) {
         test.push_back(i);
     }
     prediction = bud.BayesianApproach(input, 1,1,1,0, test);
+    bud.estimateError(test, prediction);
 }
 
 void testMLofCat() {

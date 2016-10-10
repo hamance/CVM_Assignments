@@ -24,5 +24,7 @@ public:
 
 };
 
+void testMLofCat();
+
 
 #endif //CVM_ASSIGNMENTS_ML_OF_CATEGORICAL_PARAMETERS_H

@@ -59,3 +59,29 @@ void ML_of_Categorical_Parameters::estimateError(vector<double> original, vector
         cout<<fabs(*iter1 - *iter2)<<"   ";
     }
 }
+
+void testMLofCat() {
+    ML_of_Categorical_Parameters mlcp;
+    double array[6] = {0.25,0.15,0.1,0.1,0.15,0.25};
+    int Num = 100;
+    cout<<"Maximum likelihood leanring of categorical parameters..."<<endl;
+    cout<<"Please input the scale of categorical.(integer, 0 for defalut): ";
+    cin>>Num;
+    if (Num <= 0) {
+        cout<<"Default: 6 categories at : ";
+        for (int i = 0; i < 6; ++i) {
+            cout<<array[i]<<" ";
+        }
+        cout<<endl;
+    } else {
+        int array[Num];
+        for (int i = 0; i < Num; ++i) {
+            cin>>array[i];
+        }
+    }
+    size_t count = sizeof(array) / sizeof(double);
+    vector<double> weights(array, array+count);
+    vector<double> try1 = mlcp.randomSample(6, 20000, weights);
+    vector<double> out1 = mlcp.mleOfCat(try1, 6);
+    mlcp.estimateError(weights, out1);
+}

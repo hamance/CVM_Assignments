@@ -34,7 +34,7 @@ vector<double> Bayesian_to_Univariate_Normal_Distribution::BayesianApproach(vect
     for (vector<double>::const_iterator iter = input.begin(); iter != input.end(); iter++) {
         temp.push_back(pow(*iter, 2));
     }
-    double beta_post = accumulate(temp.begin(), temp.end(), 0.0f) + beta + (gamma*delta*delta)/2
+    double beta_post = accumulate(temp.begin(), temp.end(), 0.0f)/2 + beta + (gamma*delta*delta)/2
                        - pow((gamma*delta+accumulate(input.begin(), input.end(), 0.0f)),2)/(2*(gamma+size));
     double gamma_post = gamma + size;
     double delta_post = (gamma*delta + size)/(gamma+size);
@@ -72,6 +72,18 @@ vector<double> Bayesian_to_Univariate_Normal_Distribution::BayesianApproach(vect
 
 }
 
-void Bayesian_to_Univariate_Normal_Distribution::estimateError() {
+void Bayesian_to_Univariate_Normal_Distribution::estimateError(vector<double> origin, vector<double> predict) {
     //Todo
+}
+
+void testBayesianApproach() {
+    Bayesian_to_Univariate_Normal_Distribution bud;
+    vector<double> input, test, prediction;
+    input = bud.getTrainData(5000);
+    //x_test = -20:0.01:30;
+    for(double i=-20.0; i<30 ;i+= 0.01) {
+        test.push_back(i);
+    }
+    prediction = bud.BayesianApproach(input, 1,1,1,0, test);
+    bud.estimateError(test, prediction);
 }

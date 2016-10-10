@@ -36,4 +36,6 @@ public:
 };
 
 
+void testMapLearning();
+
 #endif //CVM_ASSIGNMENTS_MAP_OF_UNIVARIATE_NORMAL_PARAMETERS_H

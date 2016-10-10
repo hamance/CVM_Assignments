@@ -38,5 +38,6 @@ public:
 
 };
 
+void testMaxLikelihoodLearning();
 
 #endif //CVM_ASSIGNMENTS_MAX_LIKELIHOOD_LEARNING_OF_NORMAL_DISTRIBUTION_H

@@ -25,8 +25,10 @@ public:
 
     vector<double> BayesianApproach(vector<double>, double alpha, double beta, double gamma, double delta, vector<double>test);
 
-    void estimateError();
+    void estimateError(vector<double> origin, vector<double> predict);
 };
 
+
+void testBayesianApproach();
 
 #endif //CVM_ASSIGNMENTS_BAYESIAN_TO_UNIVARIATE_NORMAL_DISTRIBUTION_H
