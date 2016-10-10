@@ -95,7 +95,7 @@ void testMAPofCat() {
     size_t count = sizeof(array) / sizeof(double);
     vector<double> weights(array, array+count);
     vector<double> try1 = mapcp.randomSample(6, 20000, weights);
-    size_t count1 = sizeof(alpha);
+    size_t count1 = sizeof(alpha) / sizeof(double);
     vector<double> alpha1(alpha, alpha+count1);
     vector<double> out1 = mapcp.mapOfCat(try1, alpha1);
     mapcp.estimateError(weights, out1);
