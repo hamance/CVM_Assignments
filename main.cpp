@@ -5,11 +5,13 @@
 #include "main.h"
 
 int main(){
+    //testEigen();
     //testMaxLikelihoodLearning();
     //testMapLearning();
     //testBayesianApproach();
     //testMLofCat();
-    testMAPofCat();
+    //testMAPofCat();
+    testBGC_Matrix();
     cout<<"Hello World!"<<endl;
     return 0;
 }

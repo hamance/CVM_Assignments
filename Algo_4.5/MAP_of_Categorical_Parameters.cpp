@@ -86,7 +86,7 @@ void testMAPofCat() {
         }
         cout<<endl;
     } else {
-        delete(array);
+        //array.clear();
         double array[Num];
         for (int i = 0; i < Num; ++i) {
             cin>>array[i];

@@ -6,4 +6,3 @@
 
 #####Bugs:
 
-- Algo_4.3 untested.

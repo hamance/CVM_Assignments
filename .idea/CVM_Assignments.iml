@@ -9,10 +9,16 @@
       <sourceFolder url="file://$MODULE_DIR$/Algo_4.3/Bayesian_to_Univariate_Normal_Distribution.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Algo_4.3/Bayesian_to_Univariate_Normal_Distribution.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Algo_4.1/Max_Likelihood_Learning_of_Normal_Distribution.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Algo_4.1/Max_Likelihood_Learning_of_Normal_Distribution.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Algo_4.2/MAP_of_Univariate_Normal_Parameters.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Algo_4.2/MAP_of_Univariate_Normal_Parameters.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algo_6.1/Basic_Generative_Classifier_Eigen.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algo_6.1/Basic_Generative_Classifier_Eigen.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algo_6.1/Basic_Generative_Classifier.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algo_6.1/Basic_Generative_Classifier.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algo_4.1/Max_Likelihood_Learning_of_Normal_Distribution.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Algo_4.1/Max_Likelihood_Learning_of_Normal_Distribution.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/main.h" isTestSource="false" />
     </content>
@@ -23,11 +29,13 @@
           <root url="file://D:/dev/MinGW/lib/gcc/mingw32/5.3.0/include" />
           <root url="file://D:/dev/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
           <root url="file://D:/dev/MinGW/include" />
+          <root url="file://$MODULE_DIR$/../../OpenCV/3.0.0/opencv/build/include" />
         </CLASSES>
         <SOURCES>
           <root url="file://D:/dev/MinGW/lib/gcc/mingw32/5.3.0/include" />
           <root url="file://D:/dev/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
           <root url="file://D:/dev/MinGW/include" />
+          <root url="file://$MODULE_DIR$/../../OpenCV/3.0.0/opencv/build/include" />
         </SOURCES>
       </library>
     </orderEntry>
