@@ -1,5 +1,3 @@
-.idea/*
-
 # Compiled Object files
 *.slo
 *.lo
@@ -29,5 +27,4 @@
 *.exe
 *.out
 *.app
-.idea/workspace.xml
 

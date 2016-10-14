@@ -8,4 +8,4 @@
 
 #####Bugs:
 
-    Algo_6.1 UnFinished.
+    Algo_6.1 UnTested
