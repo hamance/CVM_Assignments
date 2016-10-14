@@ -30,12 +30,14 @@
           <root url="file://D:/dev/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
           <root url="file://D:/dev/MinGW/include" />
           <root url="file://$MODULE_DIR$/../../OpenCV/3.0.0/opencv/build/include" />
+          <root url="file://$MODULE_DIR$/lib" />
         </CLASSES>
         <SOURCES>
           <root url="file://D:/dev/MinGW/lib/gcc/mingw32/5.3.0/include" />
           <root url="file://D:/dev/MinGW/lib/gcc/mingw32/5.3.0/include-fixed" />
           <root url="file://D:/dev/MinGW/include" />
           <root url="file://$MODULE_DIR$/../../OpenCV/3.0.0/opencv/build/include" />
+          <root url="file://$MODULE_DIR$/lib" />
         </SOURCES>
       </library>
     </orderEntry>
