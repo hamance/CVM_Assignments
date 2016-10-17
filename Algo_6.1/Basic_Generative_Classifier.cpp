@@ -36,7 +36,6 @@ vector<double> Basic_Generative_Classifier::randomTest() {
 }
 
 vector<double> Basic_Generative_Classifier::generativeClassfy(vector<pair<double,int>> train, vector<double> test, int cat) {
-
     int size = train.size();
     int dimension = 1;
     vector<double> x_train_per_class[cat];

@@ -12,6 +12,6 @@ int main(){
     //testMLofCat();
     //testMAPofCat();
     testBGC_Matrix();
-    cout<<"Hello World!"<<endl;
+    cout<<"\nHello World!"<<endl;
     return 0;
 }
