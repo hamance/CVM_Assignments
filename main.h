@@ -16,5 +16,8 @@
 #include "Algo_4.4/ML_of_Categorical_Parameters.h"
 #include "Algo_4.5/MAP_of_Categorical_Parameters.h"
 #include "Algo_6.1/Basic_Generative_Classifier_Eigen.h"
+#include "Algo_7.1/Eigen_multivariate_normal_distribution.h"
+#include "Algo_7.1/Fitting_Mixture_of_Gaussians.h"
+#include "Algo_7.2/Fitting_the_t_distribution.h"
 
 using namespace std;

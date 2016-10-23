@@ -7,6 +7,7 @@
 
 using Eigen::VectorXf;
 using Eigen::RowVectorXf;
+using namespace std;
 
 MatrixXf Basic_Generative_Classifier_Eigen::randomTrain(vector<double> mu, vector<double> var, vector<double> num) {
     int size = mu.size();
@@ -24,6 +25,7 @@ MatrixXf Basic_Generative_Classifier_Eigen::randomTrain(vector<double> mu, vecto
         for (int j = N; j < N+num[i]; ++j) {
             temp.row(j).head(2) << distribution(generator),i;
         }
+        //cout<<temp<<endl;
         N+=num[i];
     }
     return temp;
@@ -157,6 +159,8 @@ int Basic_Generative_Classifier_Eigen::test(MatrixXf test, int cat) {
 MatrixXf Basic_Generative_Classifier_Eigen::generativeClassfy(MatrixXf train, MatrixXf test, int cat) {
     category = cat;
     int I = train.rows();
+    cout<<train<<endl;
+    cout<<test<<endl;
 
     //separate train data and class marker
     int dimensionality = train.cols()-1;
@@ -172,8 +176,8 @@ MatrixXf Basic_Generative_Classifier_Eigen::generativeClassfy(MatrixXf train, Ma
     for (int i = 0; i < I; ++i) {
         k = (int)train.row(i).tail(1).value();
         nrow = x_train_per_class[k].rows()+1;
-        x_train_per_class[k].conservativeResize(nrow+1, dimensionality);
-        x_train_per_class[k].row(nrow) << train.row(i).head(length-1);
+        x_train_per_class[k].conservativeResize(nrow, dimensionality);
+        x_train_per_class[k].row(nrow-1) << train.row(i).head(length-1);
         class_count[k] ++;
     }
     // init matrix mu , array of matrices sig , array lambda (categorical prior)
@@ -182,23 +186,34 @@ MatrixXf Basic_Generative_Classifier_Eigen::generativeClassfy(MatrixXf train, Ma
     //MatrixXf sig[cat];
     sig = new MatrixXf[cat];
 
+    cout<<"-----------0"<<endl;
+    cout<<x_train_per_class[0]<<endl;
+    cout<<"-----------1"<<endl;
+    cout<<x_train_per_class[1]<<endl;
+
     //double lambda[cat] = {0};
     lambda = new double[cat];
-    MatrixXf mat(dimensionality, dimensionality);
+    VectorXf mat(dimensionality);
     for (int k = 0; k < cat; ++k) {
         //check class_count
         if (class_count[k]) {
             for (int i = 0; i < dimensionality; ++i) {
                 mu.row(k).col(i) << x_train_per_class[k].col(i).sum() / class_count[k];
             }
+            cout<<mu<<endl;
             sig[k] = MatrixXf::Zero(dimensionality, dimensionality);
             for (int j = 0; j < class_count[k]; ++j) {
                 for (int m = 0; m < dimensionality; ++m) {
-                    mat.row(m) = x_train_per_class[k].row(m) - mu.row(k);
+                    mat.row(m) = x_train_per_class[k].row(j).col(m) - mu.row(k).col(m);
+                    cout<<mat.row(m)<<endl;
                 }
+                cout<<"-------mat"<<endl;
+                cout<<mat<<endl;
                 mat = mat.transpose() * mat;
                 sig[k] += mat;
             }
+            cout<<"---------sig"<<endl;
+            cout<<sig[k]<<endl;
             sig[k] /= class_count[k];
 
             lambda[k] = class_count[k]/(double)I;

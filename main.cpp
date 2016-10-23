@@ -12,6 +12,7 @@ int main(){
     //testMLofCat();
     //testMAPofCat();
     testBGC_Matrix();
+    //testEigenMultivariateNormalDistribution();
     cout<<"\nHello World!"<<endl;
     return 0;
 }
